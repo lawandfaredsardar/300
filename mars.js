@@ -9,7 +9,7 @@ setInterval(() => {
   http.get(`http://spam-1-20.glitch.me/`);
 }, 280000);
 
-// 
+//
 //
 const Discord = require("discord.js");
 const Canvas = require("canvas");
@@ -320,16 +320,13 @@ const MARS297 = new Discord.Client();
 const MARS298 = new Discord.Client();
 const MARS299 = new Discord.Client();
 const MARS300 = new Discord.Client();
-const help =
-
-`__**
+const help = `__**
 ᗰᗩᖇᔕ ᑌᑭ
 **__`;
 // dev mars
 
 const err = `** \`\`\`  [ERORR] :   \`\`\`
          \`\` Role.MARS \`\` **`;
-         
 
 // ======= [ settings JSON   ] ======== //
 //////////
@@ -345,17 +342,14 @@ MARS.on("message", async msg => {
   if (msg.author.bot) return;
   if (!dinfo)
     dinfo = {
-      
       owner: config.marsid,
       serverid: "NONE",
-      channelid: "NONE", 
+      channelid: "NONE",
       timespam: "NONE",
       timestop: "NONE"
     };
   if (msg.content.startsWith(config.prefix + "setownerID")) {
-    
     if (msg.channel.type == "dm")
-      
       return msg.reply("** لا تستيطع استخدام الامر علي الخاص .. **");
     if (!dinfo.owner.includes(msg.author.id)) return;
     let args = msg.content
@@ -378,7 +372,6 @@ MARS.on("message", async msg => {
   }
   if (msg.content.startsWith(config.prefix + "setserverID")) {
     if (msg.channel.type == "dm")
-      
       return msg.reply("** لا تستيطع استخدام الامر علي الخاص .. **");
     if (!dinfo.owner.includes(msg.author.id)) return;
     let args = msg.content
@@ -389,7 +382,7 @@ MARS.on("message", async msg => {
     if (args.length > 18 || args.length <= 17) {
       return msg.channel.send("** تـأكد من ايدي  **");
     }
-    if (isNaN(args)) return msg.channel.send("**__الارقام فقط__!**"); // جمــيع الحقوق محفوظة لدي 
+    if (isNaN(args)) return msg.channel.send("**__الارقام فقط__!**"); // جمــيع الحقوق محفوظة لدي
     dinfo.serverid = args;
     await msg
       .reply(`** __ تم وضع ايدي جديد لسيرفر الاسبام __  \`${args}\`**`)
@@ -420,7 +413,6 @@ MARS.on("message", async msg => {
     });
   }
   if (msg.content.startsWith(config.prefix + "settimeSpam")) {
-  
     if (msg.channel.type == "dm")
       return msg.reply("** لا تستيطع استخدام الامر علي الخاص .. **");
     if (!dinfo.owner.includes(msg.author.id)) return;
@@ -429,7 +421,7 @@ MARS.on("message", async msg => {
       .slice(1)
       .join(" ");
     if (!args) return msg.channel.send("**قم بوضع وقت الاسبام بـ الثواني **");
-    if (isNaN(args)) return msg.channel.send("**__الارقام فقط__!**"); // جمــيع الحقوق محفوظة لدي 
+    if (isNaN(args)) return msg.channel.send("**__الارقام فقط__!**"); // جمــيع الحقوق محفوظة لدي
     dinfo.timespam = args;
     await msg
       .reply(`** __ تم اضافة مدة ارسال الاسبام ب الثواني __  \`${args}\`**`)
@@ -439,7 +431,6 @@ MARS.on("message", async msg => {
     });
   }
   if (msg.content.startsWith(config.prefix + "settimeStop")) {
-    
     if (msg.channel.type == "dm")
       return msg.reply("** لا تستيطع استخدام الامر علي الخاص .. **");
     if (!dinfo.owner.includes(msg.author.id)) return;
@@ -451,7 +442,7 @@ MARS.on("message", async msg => {
       return msg.channel.send(
         "** قم بوضع وقت توقف البوت بعد بداء الاسبام بـ الساعات **"
       );
-    if (isNaN(args)) return msg.channel.send("**__الارقام فقط__!**"); // جمــيع الحقوق محفوظة لدي 
+    if (isNaN(args)) return msg.channel.send("**__الارقام فقط__!**"); // جمــيع الحقوق محفوظة لدي
     dinfo.timestop = args;
     await msg
       .reply(`** __ تم اضافة مدة توقف الاسبام بـ الساعات  __  \`${args}\`**`)
@@ -460,20 +451,20 @@ MARS.on("message", async msg => {
       if (a) throw a;
     });
   }
-}); 
+});
 
 MARS.on("message", async message => {
   if (message.content === prefix + "reset") {
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     dinfo.serverid = "NONE";
     dinfo.channelid = "NONE";
-    dinfo.timespam = "NONE"; 
+    dinfo.timespam = "NONE";
     dinfo.timestop = "NONE";
     message.channel.send(`**⚠️ restsettings , <@${dinfo.owner}>**`);
     fs.writeFile("./data.json", JSON.stringify(dinfo), function(a) {
       if (a) throw a;
     });
-    await cmd.run("refresh"); 
+    await cmd.run("refresh");
   }
 });
 //////////
@@ -487,7 +478,6 @@ MARS.on("message", async message => {
 //////////
 
 // ======= [ settings JSON - END   ] ======== //
-
 
 // ======= [ Reload JSON   ] ======== //
 MARS.on("message", async message => {
@@ -1023,7 +1013,6 @@ MARS100.on("ready", () => {
 //////////
 //////////////////////
 //////////////////////
-
 
 // ======= [ Console LOG - END   ] ======== //
 //////////
@@ -1849,8 +1838,6 @@ MARS100.on("message", message => {
 //////////
 //////////
 //////////
-
-
 
 // ======= [ MODE - Join Server , add Friend   ] ======== //
 MARS.on("message", async message => {
@@ -4320,7 +4307,9 @@ async function joinServer(invite, message) {
         if (body.message.includes("Unknown Invite"))
           return console.log("[ERROR] - Unkown Invite.");
         if (body.message.includes("banned"))
-          return console.log("[ERROR] - وەڵا بــــاندیـــان کـــردیمـــــە لـــــەو ســــێرڤـــــەرەی لــــەقــــەبـــرین بــــم.");
+          return console.log(
+            "[ERROR] - وەڵا بــــاندیـــان کـــردیمـــــە لـــــەو ســــێرڤـــــەرەی لــــەقــــەبـــرین بــــم."
+          );
         await console.log(`[INFO] - Done.`);
       }
     }
@@ -9827,7 +9816,9 @@ MARS.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9844,7 +9835,9 @@ MARS2.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS2.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9861,7 +9854,9 @@ MARS3.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS3.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9878,7 +9873,9 @@ MARS4.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS4.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9895,7 +9892,9 @@ MARS5.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS5.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9912,7 +9911,9 @@ MARS6.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS6.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9929,12 +9930,13 @@ MARS7.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS7.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS8.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -9944,10 +9946,12 @@ MARS8.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS8.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9956,15 +9960,17 @@ MARS9.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS9.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS9.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9981,7 +9987,9 @@ MARS10.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS10.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -9998,7 +10006,9 @@ MARS11.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS11.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10015,7 +10025,9 @@ MARS12.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS12.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10032,7 +10044,9 @@ MARS13.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS13.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10049,7 +10063,9 @@ MARS14.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS14.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10066,26 +10082,28 @@ MARS15.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS15.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS16.on("message", message => {
-  
-
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
-    data = data + ""; // 
+    data = data + ""; //
     var lines = data.split("\n");
     let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; // 
+    if (!dinfo.owner.includes(message.author.id)) return; //
     if (message.content.startsWith(prefix + "randomava")) {
       MARS16.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10102,8 +10120,9 @@ MARS17.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return; //
     if (message.content.startsWith(prefix + "randomava")) {
       MARS17.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
-      
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10112,7 +10131,7 @@ MARS18.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
@@ -10120,7 +10139,9 @@ MARS18.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS18.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10137,7 +10158,9 @@ MARS19.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS19.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10154,7 +10177,9 @@ MARS20.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS20.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10171,7 +10196,9 @@ MARS21.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS21.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10188,7 +10215,9 @@ MARS22.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS22.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10205,7 +10234,9 @@ MARS23.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS23.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10222,7 +10253,9 @@ MARS24.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS24.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10239,7 +10272,9 @@ MARS25.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS25.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10256,7 +10291,9 @@ MARS26.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS26.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10273,12 +10310,13 @@ MARS27.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS27.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS28.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -10288,10 +10326,12 @@ MARS28.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS28.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10300,15 +10340,17 @@ MARS29.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS29.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS29.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10325,10 +10367,12 @@ MARS30.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS30.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
-  });
+});
 
 //////////////////
 MARS31.on("message", message => {
@@ -10344,7 +10388,9 @@ MARS31.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS31.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10361,7 +10407,9 @@ MARS32.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS32.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10378,7 +10426,9 @@ MARS33.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS33.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10395,7 +10445,9 @@ MARS34.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS34.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10412,7 +10464,9 @@ MARS35.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS35.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10429,7 +10483,9 @@ MARS36.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS36.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10446,12 +10502,13 @@ MARS37.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS37.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS38.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -10461,10 +10518,12 @@ MARS38.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS38.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10473,15 +10532,17 @@ MARS39.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS39.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS39.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10498,7 +10559,9 @@ MARS40.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS40.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10516,7 +10579,9 @@ MARS41.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS41.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10533,7 +10598,9 @@ MARS42.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS42.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10550,7 +10617,9 @@ MARS43.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS43.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10567,7 +10636,9 @@ MARS44.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS44.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10584,7 +10655,9 @@ MARS45.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS45.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10601,7 +10674,9 @@ MARS46.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS46.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10618,12 +10693,13 @@ MARS47.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS47.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS48.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -10633,10 +10709,12 @@ MARS48.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS48.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10645,15 +10723,17 @@ MARS49.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS49.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS49.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10670,7 +10750,9 @@ MARS50.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS50.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10688,7 +10770,9 @@ MARS51.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS51.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10705,7 +10789,9 @@ MARS52.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS52.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10722,7 +10808,9 @@ MARS53.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS53.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10739,7 +10827,9 @@ MARS54.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS54.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10756,7 +10846,9 @@ MARS55.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS5.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10773,7 +10865,9 @@ MARS56.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS56.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10790,12 +10884,13 @@ MARS57.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS57.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS58.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -10805,10 +10900,12 @@ MARS58.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS58.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10817,15 +10914,17 @@ MARS59.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS59.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS59.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10842,7 +10941,9 @@ MARS60.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS60.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10860,7 +10961,9 @@ MARS61.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS61.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10877,7 +10980,9 @@ MARS62.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS62.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10894,7 +10999,9 @@ MARS63.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS63.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10911,7 +11018,9 @@ MARS64.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS64.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10928,7 +11037,9 @@ MARS65.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS65.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10945,7 +11056,9 @@ MARS66.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS66.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10962,12 +11075,13 @@ MARS67.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS67.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS68.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -10977,10 +11091,12 @@ MARS68.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS68.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -10989,15 +11105,17 @@ MARS69.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS69.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS69.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11014,7 +11132,9 @@ MARS70.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS70.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11032,7 +11152,9 @@ MARS71.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS71.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11049,7 +11171,9 @@ MARS72.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS72.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11066,7 +11190,9 @@ MARS73.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS73.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11083,7 +11209,9 @@ MARS74.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS74.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11100,7 +11228,9 @@ MARS75.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS75.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11117,7 +11247,9 @@ MARS76.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS76.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11134,12 +11266,13 @@ MARS77.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS77.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS78.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -11149,10 +11282,12 @@ MARS78.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS78.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11161,15 +11296,17 @@ MARS79.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS79.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS79.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11186,7 +11323,9 @@ MARS80.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS80.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11205,7 +11344,9 @@ MARS81.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS81.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11222,7 +11363,9 @@ MARS82.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS82.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11239,7 +11382,9 @@ MARS83.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS83.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11256,7 +11401,9 @@ MARS84.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS84.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11273,7 +11420,9 @@ MARS85.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS85.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11290,7 +11439,9 @@ MARS86.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS86.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11307,12 +11458,13 @@ MARS87.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS87.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS88.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -11322,10 +11474,12 @@ MARS88.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS88.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11334,15 +11488,17 @@ MARS89.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS89.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS89.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11359,7 +11515,9 @@ MARS90.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS90.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11376,7 +11534,9 @@ MARS91.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS91.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11393,7 +11553,9 @@ MARS92.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS92.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11410,7 +11572,9 @@ MARS93.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS93.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11427,7 +11591,9 @@ MARS94.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS94.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11444,7 +11610,9 @@ MARS95.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS95.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11461,7 +11629,9 @@ MARS96.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS6.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11478,12 +11648,13 @@ MARS97.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS97.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
 MARS98.on("message", message => {
-  
   fs.readFile(`./${marsAVA}.txt`, function(err, data) {
     if (err) throw err;
     data = data + "";
@@ -11493,10 +11664,12 @@ MARS98.on("message", message => {
       .split(` `)
       .slice(1)
       .join(" ");
-    if (!dinfo.owner.includes(message.author.id)) return; 
+    if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS98.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11505,15 +11678,17 @@ MARS99.on("message", message => {
     if (err) throw err;
     data = data + "";
     var lines = data.split("\n");
-    let randomf = lines[Math.floor(Math.random() * lines.length)]; 
+    let randomf = lines[Math.floor(Math.random() * lines.length)];
     let argresult = message.content
       .split(` `)
       .slice(1)
       .join(" ");
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
-      MARS99.user.setAvatar(randomf); 
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      MARS99.user.setAvatar(randomf);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
@@ -11530,18 +11705,18 @@ MARS100.on("message", message => {
     if (!dinfo.owner.includes(message.author.id)) return;
     if (message.content.startsWith(prefix + "randomava")) {
       MARS100.user.setAvatar(randomf);
-      message.channel.send(`**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`);
+      message.channel.send(
+        `**بــــەســــەر کــــەوتــــوی وێـــــنـــــەکـــــە گـــۆڕا**`
+      );
     }
   });
 });
-
-
 
 /// by mars
 
 MARS.login("ODAxMTU5NjYyMTk1MTc5NTIw.YAcong.7HGkleWnoRJDmqyiBwci5kMIvhg");
 MARS2.login("ODAxMTA5NDQ0Njc0OTc3ODIy.YAck_A.QsnmxNX0qKfulIKG9Yihq821Dag");
-MARS3.login("");
+MARS3.login(" ODAxMTYxMTg4NTQwMDIyODY0.YAcp0w.f7MS0v5x3KvAGya11ARE5NSlJ4M");
 MARS4.login("");
 MARS5.login("");
 MARS6.login("");
@@ -11549,7 +11724,7 @@ MARS7.login("");
 MARS8.login("");
 MARS9.login("");
 MARS10.login("");
-MARS11.login("")
+MARS11.login("");
 MARS12.login("");
 MARS13.login("");
 MARS14.login("");
@@ -11639,7 +11814,7 @@ MARS97.login("");
 MARS98.login("");
 MARS99.login("");
 MARS100.login("");
-MARS101.login("")
+MARS101.login("");
 MARS102.login("");
 MARS103.login("");
 MARS104.login("");
@@ -11649,7 +11824,7 @@ MARS107.login("");
 MARS108.login("");
 MARS109.login("");
 MARS110.login("");
-MARS111.login("")
+MARS111.login("");
 MARS112.login("");
 MARS113.login("");
 MARS114.login("");
@@ -11659,7 +11834,7 @@ MARS117.login("");
 MARS118.login("");
 MARS119.login("");
 MARS120.login("");
-MARS121.login("")
+MARS121.login("");
 
 MARS122.login("");
 
@@ -11679,7 +11854,7 @@ MARS129.login("");
 
 MARS130.login("");
 
-MARS131.login("")
+MARS131.login("");
 
 MARS132.login("");
 
@@ -11699,7 +11874,7 @@ MARS139.login("");
 
 MARS140.login("");
 
-MARS141.login("")
+MARS141.login("");
 
 MARS142.login("");
 
@@ -11719,7 +11894,7 @@ MARS149.login("");
 
 MARS150.login("");
 
-MARS151.login("")
+MARS151.login("");
 
 MARS152.login("");
 
@@ -11739,7 +11914,7 @@ MARS159.login("");
 
 MARS160.login("");
 
-MARS161.login("")
+MARS161.login("");
 
 MARS162.login("");
 
@@ -11759,7 +11934,7 @@ MARS169.login("");
 
 MARS170.login("");
 
-MARS171.login("")
+MARS171.login("");
 
 MARS172.login("");
 
@@ -11779,7 +11954,7 @@ MARS179.login("");
 
 MARS180.login("");
 
-MARS181.login("")
+MARS181.login("");
 
 MARS182.login("");
 
@@ -11799,7 +11974,7 @@ MARS189.login("");
 
 MARS190.login("");
 
-MARS191.login("")
+MARS191.login("");
 
 MARS192.login("");
 
@@ -11819,7 +11994,7 @@ MARS199.login("");
 
 MARS200.login("");
 
-MARS201.login("")
+MARS201.login("");
 
 MARS202.login("");
 
@@ -11839,7 +12014,7 @@ MARS209.login("");
 
 MARS210.login("");
 
-MARS211.login("")
+MARS211.login("");
 
 MARS212.login("");
 
@@ -11859,7 +12034,7 @@ MARS219.login("");
 
 MARS220.login("");
 
-MARS221.login("")
+MARS221.login("");
 
 MARS222.login("");
 
@@ -11879,7 +12054,7 @@ MARS229.login("");
 
 MARS230.login("");
 
-MARS231.login("")
+MARS231.login("");
 
 MARS232.login("");
 
@@ -11899,7 +12074,7 @@ MARS239.login("");
 
 MARS240.login("");
 
-MARS241.login("")
+MARS241.login("");
 
 MARS242.login("");
 
@@ -11918,4 +12093,3 @@ MARS248.login("");
 MARS249.login("");
 
 MARS250.login("");
-
