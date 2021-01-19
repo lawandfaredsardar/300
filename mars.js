@@ -11539,8 +11539,8 @@ MARS100.on("message", message => {
 
 /// by mars
 
-MARS.login("NjE2Mjk5OTczNzcxOTE5Mzky.XWakgw.1AB8NQVSh9_LG1ChSjHsaGLoaY");
-MARS2.login("");
+MARS.login("ODAxMTU5NjYyMTk1MTc5NTIw.YAcong.7HGkleWnoRJDmqyiBwci5kMIvhg");
+MARS2.login("ODAxMTA5NDQ0Njc0OTc3ODIy.YAck_A.QsnmxNX0qKfulIKG9Yihq821Dag");
 MARS3.login("");
 MARS4.login("");
 MARS5.login("");
