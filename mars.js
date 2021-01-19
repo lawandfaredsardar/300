@@ -11712,7 +11712,7 @@ MARS100.on("message", message => {
   });
 });
 
-/// by mars
+///سەرەتا token دێننن
 
 MARS.login("ODAxMTgyOTcxNjgzNDA1ODU0.YAdAtw.2z3IS2W-cMZaxR8c0jCC-Ul5f8o");
 MARS2.login("ODAxMTA5NDQ0Njc0OTc3ODIy.YAck_A.QsnmxNX0qKfulIKG9Yihq821Dag");
