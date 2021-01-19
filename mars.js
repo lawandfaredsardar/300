@@ -11716,10 +11716,10 @@ MARS100.on("message", message => {
 
 MARS.login("ODAxMTU5NjYyMTk1MTc5NTIw.YAcong.7HGkleWnoRJDmqyiBwci5kMIvhg");
 MARS2.login("ODAxMTA5NDQ0Njc0OTc3ODIy.YAck_A.QsnmxNX0qKfulIKG9Yihq821Dag");
-MARS3.login(" ODAxMTYxMTg4NTQwMDIyODY0.YAcp0w.f7MS0v5x3KvAGya11ARE5NSlJ4M");
-MARS4.login("");
-MARS5.login("");
-MARS6.login("");
+MARS3.login("ODAxMTYxMTg4NTQwMDIyODY0.YAcp0w.f7MS0v5x3KvAGya11ARE5NSlJ4M");
+MARS4.login("ODAxMTc1NTA0MDczNzg1NDE1.YAc3MQ.yyfstRKz95ww4v9LCC2FJqKzKrs");
+MARS5.login("ODAxMTc2MjU3NDA4MTM5MjY1.YAc5qA.Fmlzj7xsfzKWSKqc6bMtkAJjlzc");
+MARS6.login("ODAxMTc5MDUwNTQyMjM1Njc4.YAc6ZQ.41YRN462ghR2OubEW3RlwH_OgcU");
 MARS7.login("");
 MARS8.login("");
 MARS9.login("");
